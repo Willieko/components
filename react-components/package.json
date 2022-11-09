@@ -1,0 +1,43 @@
+{
+  "name": "react-components",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@ali/xconsole": "^2.6.13",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "postcss-loader": "^4.3.0",
+    "prop-types": "^15.8.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "devDependencies": {
+    "@alife/yd-externals-types": "^5.1.29",
+    "@babel/core": "^7.20.2",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-webpack4": "^6.5.13",
+    "@storybook/manager-webpack4": "^6.5.13",
+    "@storybook/react": "^6.5.13",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.3.0",
+    "css-loader": "^3.6.0",
+    "file-loader": "^1.1.4",
+    "less": "^3.13.1",
+    "less-loader": "^5.0.0",
+    "postcss-loader": "^4.3.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^4.46.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
