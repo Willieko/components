@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-03 09:53:43
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-08 10:00:42
+ * @LastEditTime: 2022-11-09 17:36:25
  * @Description: 
  */
 import React from 'react';
@@ -10,7 +10,7 @@ import { ComponentMeta, ComponentStory, Meta } from '@storybook/react';
 import BalloonCell from './index';
 
 export default {
-  title: 'Components',
+  title: 'react-components/BalloonCell',
   component: BalloonCell,
   argTypes: {
     content: {

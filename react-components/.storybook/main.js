@@ -2,9 +2,13 @@
  * @Author: GWY
  * @Date: 2022-11-09 16:43:52
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-09 17:20:30
+ * @LastEditTime: 2022-11-09 17:31:22
  * @Description:
  */
+const path = require('path');
+
+const lessRegex = /\.less$/;
+const lessModuleRegex = /\.module\.less$/;
 module.exports = {
   stories: [
     // '../stories/**/*.stories.mdx',
