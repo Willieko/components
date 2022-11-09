@@ -2,13 +2,16 @@
  * @Author: GWY
  * @Date: 2022-11-08 18:49:38
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-09 10:13:27
+ * @LastEditTime: 2022-11-09 16:33:39
  * @Description: 
 -->
 <template>
   <div class="index-root">
-    <Spin v-show="isLoading" />
-    <p>正在加载中，请稍后....</p>
+    <div class="center">
+      <Spin v-show="isLoading" />
+    </div>
+
+    <p v-if="loadingTips" class="mt5">{{ loadingTips }}</p>
   </div>
 </template>
 
@@ -20,6 +23,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    loadingTips: {
+      type: String,
+      default: '',
+    },
   },
   data() {
     return {};
@@ -30,7 +37,15 @@ export default {
 };
 </script>
 
-<style scoped lang="less">
+<style scoped>
 .index-root {
+  text-align: center;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+.mt5 {
+  margin-top: 5px;
 }
 </style>
