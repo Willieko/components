@@ -2,11 +2,11 @@
  * @Author: GWY
  * @Date: 2022-11-09 10:14:41
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-09 10:20:51
+ * @LastEditTime: 2022-11-09 10:43:36
  * @Description:
  */
-import Spin from './Spin/index';
-import { version } from '../package.json';
+import Spin from './components/Spin/index';
+import { version } from './package.json';
 
 // import "./MyButton/index.scss";
 // import "./MyInput/index.scss";
