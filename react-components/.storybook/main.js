@@ -2,13 +2,13 @@
  * @Author: GWY
  * @Date: 2022-11-09 16:43:52
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-09 17:31:22
+ * @LastEditTime: 2022-11-10 14:36:46
  * @Description:
  */
 const path = require('path');
 
 const lessRegex = /\.less$/;
-const lessModuleRegex = /\.module\.less$/;
+const lessModuleRegex = /\.modules\.less$/;
 module.exports = {
   stories: [
     // '../stories/**/*.stories.mdx',
@@ -51,6 +51,7 @@ module.exports = {
           },
         ],
         include: path.resolve(__dirname, '../'),
+        exclude: /node_modules/,
       },
       {
         test: lessModuleRegex,
@@ -78,6 +79,8 @@ module.exports = {
             },
           },
         ],
+        include: path.resolve(__dirname, '../'),
+        exclude: /node_modules/,
       }
       // {
       //   test: /\.(eot|ttf|svg|woff)$/,

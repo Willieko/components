@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-09 11:52:18
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-09 16:29:21
+ * @LastEditTime: 2022-11-10 11:58:51
  * @Description:
  */
 const path = require('path');
@@ -20,27 +20,58 @@ module.exports = {
     // 'PRODUCTION' is used when building the static version of storybook.
 
     // Make whatever fine-grained changes you need
-    config.module.rules.push({
-      test: lessRegex,
-      use: [
-        'style-loader',
-        {
-          loader: require.resolve('css-loader'),
-          options: {
-            modules: true,
-            esModule: false,
+    config.module.rules.push(
+      {
+        test: lessRegex,
+        use: [
+          'style-loader',
+          {
+            loader: require.resolve('css-loader'),
+            options: {
+              modules: true,
+              esModule: false,
+            },
           },
-        },
-        {
-          loader: require.resolve('less-loader'), // compiles Less to LESS
-          options: {
-            // modules: true,
+          {
+            loader: require.resolve('less-loader'), // compiles Less to LESS
+            options: {
+              // modules: true,
+            },
           },
-        },
-      ],
-      include: path.resolve(__dirname, '../'),
-      exclude: /node_modules/,
-    });
+        ],
+        include: path.resolve(__dirname, '../'),
+        exclude: /node_modules/,
+      },
+      {
+        test: lessModuleRegex,
+        use: [
+          require.resolve('style-loader'),
+          {
+            loader: require.resolve('css-loader'),
+            options: {
+              importLoaders: 1,
+              modules: true,
+            },
+          },
+          {
+            loader: require.resolve('postcss-loader'),
+            options: {
+              // 如果没有options这个选项将会报错 No PostCSS Config found
+              sourceMap: true,
+            },
+          },
+          {
+            loader: require.resolve('less-loader'), // compiles Less to LESS
+            options: {
+              importLoaders: 2,
+              modules: true,
+            },
+          },
+        ],
+        include: path.resolve(__dirname, '../'),
+        exclude: /node_modules/,
+      }
+    );
     // config.output = {
     //   ...config.output,
     //   path: path.resolve(__dirname, '../build/storybook-static'),
