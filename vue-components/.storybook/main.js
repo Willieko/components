@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-09 11:52:18
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-10 11:58:51
+ * @LastEditTime: 2022-11-11 13:20:37
  * @Description:
  */
 const path = require('path');
@@ -23,51 +23,51 @@ module.exports = {
     config.module.rules.push(
       {
         test: lessRegex,
-        use: [
-          'style-loader',
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              modules: true,
-              esModule: false,
-            },
-          },
-          {
-            loader: require.resolve('less-loader'), // compiles Less to LESS
-            options: {
-              // modules: true,
-            },
-          },
-        ],
+        loader: 'style-loader!css-loader!less-loader',
+        // use: [
+        //   'style-loader',
+        //   {
+        //     loader: require.resolve('css-loader'),
+        //     options: {
+        //       modules: true,
+        //       esModule: false,
+        //     },
+        //   },
+        //   {
+        //     loader: require.resolve('less-loader'), // compiles Less to LESS
+        //     options: {
+        //       modules: true,
+        //     },
+        //   },
+        // ],
         include: path.resolve(__dirname, '../'),
         exclude: /node_modules/,
       },
       {
         test: lessModuleRegex,
-        use: [
-          require.resolve('style-loader'),
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              importLoaders: 1,
-              modules: true,
-            },
-          },
-          {
-            loader: require.resolve('postcss-loader'),
-            options: {
-              // 如果没有options这个选项将会报错 No PostCSS Config found
-              sourceMap: true,
-            },
-          },
-          {
-            loader: require.resolve('less-loader'), // compiles Less to LESS
-            options: {
-              importLoaders: 2,
-              modules: true,
-            },
-          },
-        ],
+        loader: 'style-loader!css-loader!less-loader',
+        // use: [
+        //   require.resolve('style-loader'),
+        //   {
+        //     loader: require.resolve('css-loader'),
+        //     options: {
+        //       modules: true,
+        //     },
+        //   },
+        //   // {
+        //   //   loader: require.resolve('postcss-loader'),
+        //   //   options: {
+        //   //     // 如果没有options这个选项将会报错 No PostCSS Config found
+        //   //     sourceMap: true,
+        //   //   },
+        //   // },
+        //   {
+        //     loader: require.resolve('less-loader'), // compiles Less to LESS
+        //     options: {
+        //       modules: true,
+        //     },
+        //   },
+        // ],
         include: path.resolve(__dirname, '../'),
         exclude: /node_modules/,
       }
@@ -81,6 +81,7 @@ module.exports = {
     //   // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
     //   '~': path.resolve(__dirname, '../src/'),
     // };
+    config.resolve.extensions = ['.json', '.js', '.jsx', '.vue'];
 
     // Return the altered config
     return config;
