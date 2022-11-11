@@ -2,10 +2,9 @@
  * @Author: GWY
  * @Date: 2022-11-09 11:59:45
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-09 15:15:43
+ * @LastEditTime: 2022-11-11 18:04:44
  * @Description:
  */
-import { Meta } from '@storybook/vue';
 import Spin from './index.vue';
 
 export default {
@@ -13,7 +12,7 @@ export default {
    * See https://storybook.js.org/docs/vue/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: 'vue-components/Spin',
+  title: 'IDP-components/Spin',
   component: Spin,
   argTypes: {
     isLoading: {
@@ -37,7 +36,7 @@ export default {
         type: { summary: 'String' },
         defaultValue: { summary: '' },
       },
-    }
+    },
   },
 };
 
