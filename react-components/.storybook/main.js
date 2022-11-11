@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-09 16:43:52
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-10 14:36:46
+ * @LastEditTime: 2022-11-11 17:52:13
  * @Description:
  */
 const path = require('path');
@@ -13,7 +13,7 @@ module.exports = {
   stories: [
     // '../stories/**/*.stories.mdx',
     // '../stories/**/*.stories.@(js|jsx|ts|tsx)',
-    '../components/**/*.story.@(js|jsx|ts|tsx)',
+    '../src/components/**/*.story.@(js|jsx|ts|tsx)',
   ],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions'],
   framework: '@storybook/react',
@@ -103,6 +103,7 @@ module.exports = {
     //   // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
     //   '~': path.resolve(__dirname, '../src/'),
     // };
+    config.resolve.extensions.push('.json');
 
     // Return the altered config
     return config;

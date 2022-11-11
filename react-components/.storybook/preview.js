@@ -2,11 +2,12 @@
  * @Author: GWY
  * @Date: 2022-11-09 16:43:52
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-09 17:49:46
+ * @LastEditTime: 2022-11-11 17:31:59
  * @Description:
  */
 import { addDecorator, configure } from '@storybook/react';
 // import WrapperDecorator from './wrapperDecorator';
+import '../src/utils/i18n.ts';
 import '@alicloud/console-components/dist/wind.css';
 import '@alicloud/console-components/dist/xconsole.css';
 
