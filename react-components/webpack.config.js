@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-10 18:37:31
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-11 09:46:51
+ * @LastEditTime: 2022-11-11 11:38:22
  * @Description:
  */
 const path = require('path');
@@ -15,7 +15,7 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
-    library: 'react-components',
+    library: 'reactComponents',
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },
