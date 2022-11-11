@@ -6,6 +6,7 @@
  * @Description:
  */
 import Spin from './components/Spin/index';
+import ClickCopy from './components/ClickCopy/index';
 import { version } from './package.json';
 
 // import "./MyButton/index.scss";

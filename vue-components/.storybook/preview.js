@@ -2,14 +2,22 @@
  * @Author: GWY
  * @Date: 2022-11-09 11:52:18
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-09 17:49:24
+ * @LastEditTime: 2022-11-11 16:39:23
  * @Description:
  */
+import '@/language/zh-CN-AL.js'
+import '@/language/en-US-AL.js'
+import '@/utils/i18nInit';
 import Vue from 'vue';
 import ViewUI from 'view-design';
-// import WrapperDecorator from './wrapperDecorator';
 import 'view-design/dist/styles/iview.css';
+import { i18n } from '@/utils/idaas-utils';
+
 Vue.use(ViewUI);
+
+window.VM = new Vue({
+  i18n,
+});
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

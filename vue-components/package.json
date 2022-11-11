@@ -37,6 +37,7 @@
     "@storybook/manager-webpack4": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/vue": "^6.5.13",
+    "vue-i18n": "^8.22.2",
     "webpack-cli": "^4.10.0"
   },
   "author": "",
