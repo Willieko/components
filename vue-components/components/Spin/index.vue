@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-08 18:49:38
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-10 14:04:53
+ * @LastEditTime: 2022-11-10 14:47:29
  * @Description: 
 -->
 <template>
@@ -37,7 +37,7 @@ export default {
 };
 </script>
 
-<style scoped lang="less">
+<style scoped>
 .index-root {
   text-align: center;
 }

@@ -3,7 +3,7 @@
  * @Author: GWY
  * @Date: 2022-07-14 16:11:09
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-10 10:27:44
+ * @LastEditTime: 2022-11-10 19:37:15
  * @Description:table中的气泡组件，常用于备注/描述等字段
  * * 参数说明
  * content: 需要展示的内容，如果为空则会展示 --，并且不显示气泡
@@ -16,16 +16,18 @@ import { Balloon } from '@ali/xconsole/ui';
 import style from './index.scoped.less';
 
 const BalloonCell: any = ({ content, width = 100, align = 'l' }) => {
+  const alignTemp: any = align
+
   return (
     <>
       {content ? (
         <Balloon
+          align={alignTemp}
           trigger={
             <p className={style.BalloonCell} style={{ width: width + 'px' }}>
               {content}{' '}
             </p>
           }
-          align={align}
           alignEdge
           style={{ width: '420px' }}
         >

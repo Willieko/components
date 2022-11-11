@@ -2,9 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-09 17:57:02
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-10 14:28:12
+ * @LastEditTime: 2022-11-11 10:10:38
  * @Description:
  */
-import BalloonCell from './components/BalloonCell/index';
-
-export { BalloonCell };
+export * from './components/index';

@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-09 17:01:39
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-10 10:27:16
+ * @LastEditTime: 2022-11-10 15:52:43
  * @Description:
  */
 declare module '*.scoped.less' {
@@ -10,4 +10,7 @@ declare module '*.scoped.less' {
   export default content;
 }
 
-declare module '*.less';
+declare module '*.less' {
+  const content: { [className: string]: string };
+  export = content;
+}
