@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-11 10:30:59
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-11 13:22:23
+ * @LastEditTime: 2022-11-11 18:35:39
  * @Description:
  */
 const path = require('path');
@@ -25,23 +25,30 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        use: [{ loader: require.resolve('vue-loader') }],
+        loader: 'vue-loader',
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
+        exclude: /node_modules/,
       },
       {
         test: lessRegex,
         loader: 'style-loader!css-loader!less-loader',
-        include: path.resolve(__dirname, '../'),
         exclude: /node_modules/,
       },
       {
         test: lessModuleRegex,
         loader: 'style-loader!css-loader!less-loader',
-        include: path.resolve(__dirname, '../'),
+        // include: path.resolve(__dirname, './src'),
         exclude: /node_modules/,
       },
     ],
   },
   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src/'),
+    },
     extensions: ['.json', '.js', '.jsx', '.vue'],
   },
   plugins: [new VueLoaderPlugin()],

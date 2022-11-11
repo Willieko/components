@@ -2,11 +2,11 @@
  * @Author: GWY
  * @Date: 2022-11-09 10:14:41
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-11 13:14:58
+ * @LastEditTime: 2022-11-11 18:25:50
  * @Description:
  */
-import Spin from './components/Spin/index';
-import ClickCopy from './components/ClickCopy/index';
+import Spin from './src/components/Spin/index';
+import ClickCopy from './src/components/ClickCopy/index';
 import { version } from './package.json';
 
 // import "./MyButton/index.scss";
@@ -14,7 +14,7 @@ import { version } from './package.json';
 // import "./css/first-screen.chunk.css"
 // import "./css/index.chunk.css"
 
-const components = [Spin];
+const components = [Spin, ClickCopy];
 
 const install = function (Vue) {
   components.forEach((component) => {
@@ -24,5 +24,5 @@ const install = function (Vue) {
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
-export { Spin, install };
+export { Spin, ClickCopy, install };
 // export default { version, install };

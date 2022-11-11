@@ -1,3 +1,10 @@
+<!--
+ * @Author: GWY
+ * @Date: 2022-11-11 15:24:21
+ * @LastEditors: GWY
+ * @LastEditTime: 2022-11-11 18:34:50
+ * @Description: 
+-->
 <template>
   <!--复制组件-->
   <Tooltip placement="top-start" :content="toolContent" class="copy-item">
@@ -25,8 +32,8 @@ export default {
   },
   data() {
     return {
-      toolContent: VM.$t('idaas.message.click.copy',[],'点击复制')
-    }
+      toolContent: VM.$t('idaas.message.click.copy', [], '点击复制'),
+    };
   },
   methods: {
     // 复制功能
