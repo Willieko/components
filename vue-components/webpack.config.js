@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-11 10:30:59
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-14 17:06:24
+ * @LastEditTime: 2022-11-14 20:23:44
  * @Description:
  */
 const path = require('path');
@@ -17,20 +17,21 @@ const lessModuleRegex = /\.modules\.less$/;
 module.exports = {
   entry: './index.js',
   output: {
-    filename: 'index.js',
+    filename: 'main.js',
     path: path.resolve(__dirname, 'lib'),
     library: 'vueComponents',
     libraryTarget: 'umd',
     umdNamedDefine: true,
-  },
-  optimization: {
-    usedExports: true, //哪些导出的模块被使用了，再做打包
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
       },
       {
         test: /.(woff|woff2|eot|ttf|otf)$/,
@@ -55,18 +56,18 @@ module.exports = {
             //placeholder 占位符 [name]老资源模块的名称 [ext]老资源模块的后缀
             name: '[name]_[hash].[ext]',
             //打包后存放的位置
-            outputPath: 'images/',
+            outputPath: 'img/',
           },
         },
       },
       {
-        test: /\.(css|less)$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
+        test: /\.less$/,
+        use: ['style-loader', 'css-loader', 'less-loader'],
         // exclude: /node_modules/,
       },
       {
         test: lessModuleRegex,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
+        use: ['style-loader', 'css-loader', 'less-loader'],
         // include: path.resolve(__dirname, './src'),
         // exclude: /node_modules/,
       },
@@ -85,8 +86,4 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
   ],
-  watchOptions: {
-    //不监听的node_modules目录下的文件
-    ignored: /node_nodules/,
-  },
 };

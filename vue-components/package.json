@@ -1,8 +1,8 @@
 {
   "name": "vue-components-ids",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "",
-  "main": "lib/index.js",
+  "main": "lib/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
@@ -42,6 +42,5 @@
     "webpack-cli": "^4.10.0"
   },
   "author": "",
-  "license": "ISC",
-  "sideEffects": false
+  "license": "ISC"
 }
