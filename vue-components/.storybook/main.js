@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-09 11:52:18
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-11 15:08:42
+ * @LastEditTime: 2022-11-14 11:06:06
  * @Description:
  */
 const path = require('path');
@@ -23,14 +23,15 @@ module.exports = {
     config.module.rules.push(
       {
         test: lessRegex,
-        loader: 'style-loader!css-loader!less-loader',
-        include: path.resolve(__dirname, '../'),
+        // loader: 'style-loader!css-loader!less-loader',
+        use: ['style-loader', 'css-loader', 'less-loader'],
+        // include: path.resolve(__dirname, '../'),
         exclude: /node_modules/,
       },
       {
         test: lessModuleRegex,
-        loader: 'style-loader!css-loader!less-loader',
-        include: path.resolve(__dirname, '../'),
+        // loader: 'style-loader!css-loader!less-loader',
+        use: ['style-loader', 'css-loader', 'less-loader'],
         exclude: /node_modules/,
       }
     );
