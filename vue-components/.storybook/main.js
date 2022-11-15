@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-09 11:52:18
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-15 10:58:24
+ * @LastEditTime: 2022-11-15 11:45:26
  * @Description:
  */
 const path = require('path');
@@ -11,7 +11,7 @@ const lessRegex = /\.less$/;
 const lessModuleRegex = /\.module\.less$/;
 
 module.exports = {
-  stories: ['../src/components/**/*.story.@(js|jsx|ts|tsx)'],
+  stories: ['../src/components/common/**/*.story.@(js|jsx|ts|tsx)', '../src/components/idp4/**/*.story.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',

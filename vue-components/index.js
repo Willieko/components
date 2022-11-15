@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-09 10:14:41
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-11 19:34:28
+ * @LastEditTime: 2022-11-15 11:39:28
  * @Description:
  */
 
@@ -12,17 +12,16 @@ import '@/utils/i18nInit';
 import Vue from 'vue';
 import { i18n } from '@/utils/idaas-utils';
 import 'view-design/dist/styles/iview.css';
-import Spin from './src/components/Spin/index';
-import ClickCopy from './src/components/ClickCopy/index';
+
+// 通用组件
+import ClickCopy from './src/components/common/ClickCopy/index';
+
+// IDP4组件
+import Spin from './src/components/IDP4/Spin/index';
 
 window.VM = new Vue({
   i18n,
 });
-
-// import "./MyButton/index.scss";
-// import "./MyInput/index.scss";
-// import "./css/first-screen.chunk.css"
-// import "./css/index.chunk.css"
 
 const components = [Spin, ClickCopy];
 
