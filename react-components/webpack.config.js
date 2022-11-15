@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-10 18:37:31
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-15 15:58:45
+ * @LastEditTime: 2022-11-15 17:15:47
  * @Description:
  */
 const path = require('path');
@@ -64,7 +64,7 @@ module.exports = {
     alias: {
       '~': path.resolve(__dirname, '../src/'),
     },
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', 'jsx'],
   },
   plugins: [
     new CleanWebpackPlugin({
