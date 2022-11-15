@@ -1,3 +1,11 @@
 {
-  "2fa.message.common.operation.changePwd.text": "修改密码"
+  "idaas.message.react.CopyToClipboard.copy.text": "复制",
+  "idaas.message.react.CopyToClipboard.copy.success": "复制成功。",
+  "idaas.message.react.CopyToClipboard.copy.fail": "复制失败。",
+
+  "idaas.message.react.OtpValidDialog.title": "安全校验",
+  "idaas.message.react.OtpValidDialog.message.tips": "此行为是敏感操作，系统需再次校验您的身份。",
+  "idaas.message.react.OtpValidDialog.otp.placeholder": "请输入当前登录账户的OTP动态口令",
+  "idaas.message.react.OtpValidDialog.otp.help": "动态口令可以使用 “IDP动态口令” 小程序或 “IDP认证管家” APP，在系统中 “我的账户” 中扫码绑定获取。",
+  "idaas.message.react.OtpValidDialog.otp.empty.tips": "动态口令可以使用 “IDP动态口令” 小程序或 “IDP认证管家” APP，在系统中 “我的账户” 中扫码绑定获取。"
 }

@@ -2,18 +2,19 @@
  * @Author: GWY
  * @Date: 2022-11-09 16:43:52
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-11 17:52:13
+ * @LastEditTime: 2022-11-15 15:29:49
  * @Description:
  */
 const path = require('path');
 
 const lessRegex = /\.less$/;
-const lessModuleRegex = /\.modules\.less$/;
+const lessModuleRegex = /\.scoped\.less$/;
 module.exports = {
   stories: [
     // '../stories/**/*.stories.mdx',
     // '../stories/**/*.stories.@(js|jsx|ts|tsx)',
-    '../src/components/**/*.story.@(js|jsx|ts|tsx)',
+    '../src/components/common/**/*.story.@(js|jsx|ts|tsx)',
+    '../src/components/2fa/**/*.story.@(js|jsx|ts|tsx)',
   ],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions'],
   framework: '@storybook/react',
@@ -52,36 +53,13 @@ module.exports = {
         ],
         include: path.resolve(__dirname, '../'),
         exclude: /node_modules/,
-      },
-      {
-        test: lessModuleRegex,
-        use: [
-          require.resolve('style-loader'),
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              importLoaders: 1,
-              modules: true,
-            },
-          },
-          {
-            loader: require.resolve('postcss-loader'),
-            options: {
-              // 如果没有options这个选项将会报错 No PostCSS Config found
-              sourceMap: true,
-            },
-          },
-          {
-            loader: require.resolve('less-loader'), // compiles Less to LESS
-            options: {
-              importLoaders: 2,
-              modules: true,
-            },
-          },
-        ],
-        include: path.resolve(__dirname, '../'),
-        exclude: /node_modules/,
       }
+      // {
+      //   test: lessModuleRegex,
+      //   use: ['style-loader', 'css-loader', 'less-loader'],
+      //   // include: path.resolve(__dirname, '../'),
+      //   exclude: /node_modules/,
+      // }
       // {
       //   test: /\.(eot|ttf|svg|woff)$/,
       //   use: {
@@ -98,11 +76,12 @@ module.exports = {
     //   ...config.output,
     //   path: path.resolve(__dirname, '../build/storybook-static'),
     // };
-    // config.resolve.alias = {
-    //   // Support React Native Web
-    //   // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-    //   '~': path.resolve(__dirname, '../src/'),
-    // };
+    config.resolve.alias = {
+      // Support React Native Web
+      // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
+      ...config.resolve.alias,
+      '~': path.resolve(__dirname, '../src/'),
+    };
     config.resolve.extensions.push('.json');
 
     // Return the altered config

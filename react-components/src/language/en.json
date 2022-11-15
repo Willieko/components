@@ -1,3 +1,11 @@
 {
-  "2fa.message.common.operation.changePwd.text": "Modify password"
+  "idaas.message.react.CopyToClipboard.copy.text": "copy",
+  "idaas.message.react.CopyToClipboard.copy.success": "Copy succeeded.",
+  "idaas.message.react.CopyToClipboard.copy.fail": "Replication failed.",
+
+  "idaas.message.react.OtpValidDialog.title": "security check",
+  "idaas.message.react.OtpValidDialog.message.tips": "This behavior is a sensitive operation, and the system needs to verify your identity again.",
+  "idaas.message.react.OtpValidDialog.otp.placeholder": "Please enter the OTP dynamic password of the current login account",
+  "idaas.message.react.OtpValidDialog.otp.help": "The dynamic password can be obtained by scanning the code in 'My Account' in the system using the 'IDP Dynamic Password' applet or the 'IDP Authentication Manager' APP.",
+  "idaas.message.react.OtpValidDialog.otp.empty.tips": "The dynamic password can be obtained by scanning the code in 'My Account' in the system using the 'IDP Dynamic Password' applet or the 'IDP Authentication Manager' APP."
 }

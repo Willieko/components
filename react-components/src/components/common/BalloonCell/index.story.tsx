@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-03 09:53:43
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-09 17:36:25
+ * @LastEditTime: 2022-11-15 15:37:46
  * @Description: 
  */
 import React from 'react';
@@ -10,11 +10,11 @@ import { ComponentMeta, ComponentStory, Meta } from '@storybook/react';
 import BalloonCell from './index';
 
 export default {
-  title: 'react-components/BalloonCell',
+  title: 'Common/BalloonCell',
   component: BalloonCell,
   argTypes: {
     content: {
-      description: '展示内容',
+      description: '文本内容',
       defaultValue: '我是一段很长很长很长的描述信息。',
       control: {
         type: 'text',
@@ -46,6 +46,12 @@ export default {
         type: { summary: 'String' },
         defaultValue: { summary: 'l' }
       }
+    },
+  },
+  parameters: {
+    componentSubtitle: '长文本的显示处理，常用于表格的备注/描述等文字内容较长的字段',
+    docs: {
+      source: { code: '<BalloonCell content="我是一段很长很长很长的描述信息。" />' },
     },
   },
 } as Meta;
