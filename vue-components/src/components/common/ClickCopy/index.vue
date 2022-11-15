@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-11 15:24:21
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-11 18:34:50
+ * @LastEditTime: 2022-11-15 16:37:55
  * @Description: 
 -->
 <template>
@@ -32,7 +32,11 @@ export default {
   },
   data() {
     return {
-      toolContent: VM.$t('idaas.message.click.copy', [], '点击复制'),
+      toolContent: VM.$t(
+        'idaas.message.vue.CopyToClipboard.copy.text',
+        [],
+        '点击复制'
+      ),
     };
   },
   methods: {
