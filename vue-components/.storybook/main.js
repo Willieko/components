@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-09 11:52:18
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-14 20:24:15
+ * @LastEditTime: 2022-11-15 10:58:24
  * @Description:
  */
 const path = require('path');
@@ -12,7 +12,20 @@ const lessModuleRegex = /\.module\.less$/;
 
 module.exports = {
   stories: ['../src/components/**/*.story.@(js|jsx|ts|tsx)'],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        configureJSX: true,
+        babelOptions: {},
+        sourceLoaderOptions: null,
+        transcludeMarkdown: true,
+      },
+    },
+  ],
   framework: '@storybook/vue',
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
