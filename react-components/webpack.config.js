@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-10 18:37:31
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-16 11:33:34
+ * @LastEditTime: 2022-11-16 11:51:15
  * @Description:
  */
 const path = require('path');
@@ -11,7 +11,7 @@ const lessRegex = /\.less$/;
 const lessModuleRegex = /\.scoped\.less$/;
 
 module.exports = {
-  mode: 'development',
+  // mode: 'development',
   entry: './index.js',
   output: {
     filename: 'main.js',

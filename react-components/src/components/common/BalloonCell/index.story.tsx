@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-11-03 09:53:43
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-15 15:37:46
+ * @LastEditTime: 2022-11-16 14:12:32
  * @Description: 
  */
 import React from 'react';
@@ -25,7 +25,7 @@ export default {
       }
     },
     width: {
-      description: '显示长度，最小值为100',
+      description: '显示长度，超出该长度会被省略，最小值为100',
       defaultValue: 100,
       control: {
         type: 'number',
