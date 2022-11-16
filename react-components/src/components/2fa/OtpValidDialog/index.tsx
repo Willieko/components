@@ -2,7 +2,7 @@
  * @Author: GWY
  * @Date: 2022-09-23 11:17:36
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-15 15:53:40
+ * @LastEditTime: 2022-11-15 18:57:58
  * @Description: OTP安全校验弹窗
  */
 import React, { useState, useEffect } from 'react';

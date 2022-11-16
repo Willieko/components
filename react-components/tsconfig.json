@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
+    "outDir": "./lightbulb/",
     "noImplicitAny": false,
     "module": "commonjs",
     "target": "es5",
@@ -12,6 +12,11 @@
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    }
   },
   "exclude": [
     "node_modules"

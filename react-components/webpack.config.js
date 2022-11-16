@@ -2,20 +2,21 @@
  * @Author: GWY
  * @Date: 2022-11-10 18:37:31
  * @LastEditors: GWY
- * @LastEditTime: 2022-11-15 17:15:47
+ * @LastEditTime: 2022-11-16 11:33:34
  * @Description:
  */
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const lessRegex = /\.less$/;
-const lessModuleRegex = /\.modules\.less$/;
+const lessModuleRegex = /\.scoped\.less$/;
 
 module.exports = {
+  mode: 'development',
   entry: './index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'lib'),
-    library: 'reactComponents',
+    library: 'react-components-ids',
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },
@@ -23,7 +24,12 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: {
+          loader: 'ts-loader',
+          options: {
+            happyPackMode: true,
+          },
+        },
         exclude: /node-modules/,
       },
       {
@@ -54,17 +60,32 @@ module.exports = {
         },
       },
       {
-        test: /\.less$/,
+        test: lessRegex,
         use: ['style-loader', 'css-loader', 'less-loader'],
+        // include: path.resolve(__dirname, './'),
         exclude: /node_modules/,
       },
     ],
   },
   resolve: {
     alias: {
-      '~': path.resolve(__dirname, '../src/'),
+      '~': path.resolve(__dirname, './src/'),
     },
-    extensions: ['.tsx', '.ts', '.js', 'jsx'],
+    extensions: ['.tsx', '.ts', '.js'],
+  },
+  externals: {
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react',
+      root: 'React',
+    },
+    'react-dom': {
+      commonjs: 'react-dom',
+      commonjs2: 'react-dom',
+      amd: 'react-dom',
+      root: 'ReactDOM',
+    },
   },
   plugins: [
     new CleanWebpackPlugin({
